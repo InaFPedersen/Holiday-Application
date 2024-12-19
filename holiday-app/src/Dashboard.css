@@ -1,0 +1,28 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header'
+    'welcome welcome'
+    'navigation personal'
+    'navigation personal';
+  gap: 10px;
+}
+
+.welcome-message {
+  grid-area: welcome;
+  padding: 10px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.navigation-container {
+  grid-area: navigation;
+  padding: 10px;
+}
+
+.personal-container {
+  grid-area: personal;
+  padding: 10px;
+}
