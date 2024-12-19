@@ -1,3 +1,7 @@
+.container {
+  position: fixed;
+}
+
 .topbar {
   width: 100vw;
   background-color: lightgray;
