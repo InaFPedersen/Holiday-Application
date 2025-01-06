@@ -1,6 +1,16 @@
 .topbar {
   width: 100vw;
-  background-color: lightgray;
+  /* LIGHT MODE  */
+  background-color: hsl(0, 0%, 83%);
+  color: black;
+  border-bottom: 1px solid black;
+  
+  /* DARK MODE
+  background-color: black;
+  color: white;
+  border-bottom: 1px solid white; */
+  
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;

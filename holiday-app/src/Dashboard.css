@@ -5,6 +5,15 @@
     'welcome welcome'
     'navigation personal';
   gap: 10px;
+
+  /* LIGHT MODE */
+  background-color: white;
+  color: black 
+   /* DARK MODE
+  background-color: black;
+  color: white; */
+
+
 }
 
 .welcome-message {
@@ -19,9 +28,11 @@
 .navigation-container {
   grid-area: navigation;
   padding: 10px;
+  height: 100vh;
 }
 
 .personal-container {
   grid-area: personal;
   padding: 10px;
+   height: 100vh;
 }
