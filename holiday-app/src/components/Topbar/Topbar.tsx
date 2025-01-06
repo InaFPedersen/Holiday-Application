@@ -26,6 +26,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
     
     setUserLoggedIn(userLoggedIn = false);
     setUser(user = "");
+    setProfileOpen(false)
   }
 
   const Login = () => {
@@ -35,18 +36,26 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
     // setUser(user = `${userName}`);
     setUser(user = "Nora Norman")
     setUserLoggedIn(true);
+    setProfileOpen(false)
   }
 
   const ChangeLanguageToNorwegian = () => {
     setActiveLanguage(activeLanguage = "Norwegian");
+    setFlagOpen(false);
   }
 
   const ChangeLanguageToBritish = () => {
     setActiveLanguage(activeLanguage = "British");
+    setFlagOpen(false);
   }
 
   const ChangeLanguageToAmerican = () => {
     setActiveLanguage(activeLanguage = "American");
+    setFlagOpen(false);
+  }
+
+  const ToggleLightAndDarkMode = () => {
+    setLightModeActive(!lightModeActive)
   }
 
   return (
@@ -67,7 +76,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         </div>
         </div>
         <div className="right-container">
-          <div className="light-dark-mode" onClick={() => setLightModeActive(!lightModeActive)}>
+          <div className="light-dark-mode" onClick={ToggleLightAndDarkMode}>
             {lightModeActive ?
               <img src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> : <img src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
           </div>
@@ -150,11 +159,23 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           
                 <Divider />
 
-                <div className="logout"><button className="btn" onClick={Logout}>LOGOUT</button></div>
+                <div className="logout">
+                  {activeLanguage === "Norwegian" ? 
+                  <button className="btn" onClick={Logout}>
+                    LOGG UT
+                  </button> : 
+                  <button className="btn" onClick={Logout}>
+                    LOGOUT
+                  </button>}
+                </div>
               </>
               
             ) : (
-            <div className="login"><button className="btn" onClick={Login}>LOGIN</button></div>
+            <div className="login">
+              {activeLanguage === "Norwegian" ? 
+              <button className="btn" onClick={Login}>LOGG INN</button> : 
+              <button className="btn" onClick={Login}>LOGIN</button>}
+            </div>
             )}
         </div>
       ) : <></>}
