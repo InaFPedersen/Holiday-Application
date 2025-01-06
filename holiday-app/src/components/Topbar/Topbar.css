@@ -44,7 +44,8 @@ img {
 
 .flag-dropdown {
   position: absolute;
-  left: 1250px;
+  right: 90px;
+  top: 75px;
   background-color: lightgray;
   height: 200px;
   padding: 2px;
@@ -59,7 +60,8 @@ img {
 
 .profile-dropdown {
   position: absolute;
-  left: 1150px;
+  right: 5px;
+  top: 75px;
   background-color: lightgray;
   padding: 2px;
   height: 100px;
