@@ -53,49 +53,97 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
     <div className="container">
       <div className="topbar">
         <div className="left-container">
-        <div className="logo"><img src="./images/Logo.png" alt="Image of the holiday application's logo." /></div>
-        <div className="app-title"><h1>The Holiday application</h1></div>
+          {lightModeActive ? 
+            <div className="logo">
+              <img src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo." />
+            </div> : 
+            <div className="logo">
+              <img src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo." />
+            </div> 
+          }
+        
+        <div className="app-title">
+          {activeLanguage === 'Norwegian' ? <h1>Ferie applikasjonen</h1> : <h1>The Holiday application</h1>}
+        </div>
         </div>
         <div className="right-container">
           <div className="light-dark-mode" onClick={() => setLightModeActive(!lightModeActive)}>
-            <img src="./images/Light-Dark.png" alt="Light/dark mode icon for switching between light and dark mode." /> 
+            {lightModeActive ?
+              <img src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> : <img src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
-            {activeLanguage === "Norwegian" && <img src="./images/Icon-flag.png" alt="Norwegian Flag icon for switching language." />}
-            {activeLanguage === "British" && <img src="./images/Icon-flag.png" alt="British Flag icon for switching language." />}
-            {activeLanguage === "American" && <img src="./images/Icon-flag.png" alt="American Flag icon for switching language." />}
+            {lightModeActive ? <>
+              {activeLanguage === "Norwegian" && 
+              <img src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />}
+              {activeLanguage === "British" && 
+              <img src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />}
+              {activeLanguage === "American" && 
+              <img src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />}
+            </> : <>
+              {activeLanguage === "Norwegian" && 
+              <img src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />}
+              {activeLanguage === "British" && 
+              <img src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />}
+              {activeLanguage === "American" && 
+              <img src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />}
+            </>}
           </div>
+
+          {lightModeActive ? 
+            <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
+            {userLoggedIn ? 
+            <img src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> : 
+            <img src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />}
+          </div> :
           <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
-            <img src="./images/Profile-not-logged-in.png" alt="Profile icon." />
-          </div>
+            {userLoggedIn ? 
+            <img src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> : 
+            <img src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />}
+          </div>}
         </div>
       </div>
       
       {flagOpen ? (
         <div className="flag-dropdown">
-          <div className="norway" onClick={ChangeLanguageToNorwegian}>
-            <img src="./images/Icon-flag.png" alt="Flag of Norway." />
-          </div>
+          {lightModeActive ? <>
+            <div className="norway" onClick={ChangeLanguageToNorwegian}>
+              <img src="./icons/Norway-icon-light.svg" alt="Flag of Norway." />
+            </div>
 
-          <Divider />
+            <Divider />
 
-          <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
-            <img src="./images/Icon-flag.png" alt="Flag of United Kingdom." />
-          </div>
-            
-          <Divider />
+            <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
+              <img src="./icons/UK-icon-light.svg" alt="Flag of United Kingdom." />
+            </div>
               
-          <div className="united-states" onClick={ChangeLanguageToAmerican}>
-            <img src="./images/Icon-flag.png" alt="Flag of United States of America." />
-          </div>
+            <Divider />
+                
+            <div className="united-states" onClick={ChangeLanguageToAmerican}>
+              <img src="./icons/USA-icon-light.svg" alt="Flag of United States of America." />
+            </div>
+          </> : <>
+            <div className="norway" onClick={ChangeLanguageToNorwegian}>
+              <img src="./icons/Norway-icon-dark.svg" alt="Flag of Norway." />
+            </div>
 
+            <Divider />
+
+            <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
+              <img src="./icons/UK-icon-dark.svg" alt="Flag of United Kingdom." />
+            </div>
+              
+            <Divider />
+                
+            <div className="united-states" onClick={ChangeLanguageToAmerican}>
+              <img src="./icons/USA-icon-dark.svg" alt="Flag of United States of America." />
+            </div>
+          </>}
+          
         </div>
       ) : <></>}
 
       {profileOpen ? (
         <div className="profile-dropdown">
-         
-
             {userLoggedIn ? (
               <>
                 <div className="user">{user}</div>
