@@ -5,15 +5,16 @@
     'welcome welcome'
     'navigation personal';
   gap: 10px;
+}
 
-  /* LIGHT MODE */
+.light-mode {
   background-color: white;
   color: black 
-   /* DARK MODE
+}
+
+.dark-mode {
   background-color: black;
-  color: white; */
-
-
+  color: white;
 }
 
 .welcome-message {

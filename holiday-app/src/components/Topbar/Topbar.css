@@ -1,20 +1,22 @@
 .topbar {
   width: 100vw;
-  /* LIGHT MODE  */
-  background-color: hsl(0, 0%, 83%);
-  color: black;
-  border-bottom: 1px solid black;
-  
-  /* DARK MODE
-  background-color: black;
-  color: white;
-  border-bottom: 1px solid white; */
-  
-  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
+  
+}
+
+.topbar-light-mode {
+  background-color: #d4d4d4;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.topbar-dark-mode {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }
 
 img {
