@@ -41,6 +41,9 @@ const Dashboard = () => {
                 <button className='icon-button add-group'>
                   <img src="./icons/add-group-icon-light.svg" alt="Light mode version of the Add Group icon button" />
                 </button>
+                <button className='icon-button add-event'>
+                  <img src="./icons/add-event-icon-light.svg" alt="Light mode version of the Add Event icon button" />
+                </button>
                 <button className='icon-button submit-feedback'>
                   <img src="./icons/submit-feedback-icon-light.svg" alt="Light mode version of the Submit Feedback icon button" />
                 </button>
@@ -79,6 +82,9 @@ const Dashboard = () => {
                 </button>
                 <button className='icon-button add-group'>
                   <img src="./icons/add-group-icon-dark.svg" alt="Dark mode version of the Add Group icon button" />
+                </button>
+                <button className='icon-button add-event'>
+                  <img src="./icons/add-event-icon-dark.svg" alt="Dark mode version of the Add Event icon button" />
                 </button>
                 <button className='icon-button submit-feedback'>
                   <img src="./icons/submit-feedback-icon-dark.svg" alt="Dark mode version of the Submit Feedback icon button" />
@@ -123,6 +129,9 @@ const Dashboard = () => {
                 <button className='icon-button add-group'>
                   <img src="./icons/add-group-icon-light.svg" alt="Light mode version of the Add Group icon button" />
                 </button>
+                <button className='icon-button add-event'>
+                  <img src="./icons/add-event-icon-light.svg" alt="Light mode version of the Add Event icon button" />
+                </button>
                 <button className='icon-button submit-feedback'>
                   <img src="./icons/submit-feedback-icon-light.svg" alt="Light mode version of the Submit Feedback icon button" />
                 </button>
@@ -159,6 +168,9 @@ const Dashboard = () => {
                 </button>
                 <button className='icon-button add-group'>
                   <img src="./icons/add-group-icon-dark.svg" alt="Dark mode version of the Add Group icon button" />
+                </button>
+                <button className='icon-button add-event'>
+                  <img src="./icons/add-event-icon-dark.svg" alt="Dark mode version of the Add Event icon button" />
                 </button>
                 <button className='icon-button submit-feedback'>
                   <img src="./icons/submit-feedback-icon-dark.svg" alt="Dark mode version of the Submit Feedback icon button" />
