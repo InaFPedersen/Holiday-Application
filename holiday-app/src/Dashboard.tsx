@@ -56,6 +56,9 @@ const Dashboard = () => {
                 <button className='icon-button view-feedback'>
                   <img src="./icons/view-feedback-icon-light.svg" alt="Light mode version of the View Feedback icon button" />
                 </button>
+                <button className='icon-button add-user'>
+                  <img src="./icons/add-user-icon-light.svg" alt="Light mode version of the Add User icon button" />
+                </button>
                 <button className='icon-button view-holiday-request'>
                   <img src="./icons/view-holiday-request-icon-light.svg" alt="Light mode version of the View Holiday Request icon button" />
                 </button>
@@ -91,6 +94,9 @@ const Dashboard = () => {
                 </button>
                 <button className='icon-button view-feedback'>
                   <img src="./icons/view-feedback-icon-dark.svg" alt="Dark mode version of the View Feedback icon button" />
+                </button>
+                <button className='icon-button add-user'>
+                  <img src="./icons/add-user-icon-dark.svg" alt="Dark mode version of the Add User icon button" />
                 </button>
                 <button className='icon-button view-holiday-request'>
                   <img src="./icons/view-holiday-request-icon-dark.svg" alt="Dark mode version of the View Holiday Request icon button" />
@@ -128,8 +134,8 @@ const Dashboard = () => {
                   <>
                   <Divider />
 
-                    <button className='icon-button view-feedback'>
-                      <img src="./icons/view-feedback-icon-light.svg" alt="Light mode version of the View Feedback icon button" />
+                    <button className='icon-button add-user'>
+                      <img src="./icons/add-user-icon-light.svg" alt="Light mode version of the Add User icon button" />
                     </button>
                     <button className='icon-button view-holiday-request'>
                       <img src="./icons/view-holiday-request-icon-light.svg" alt="Light mode version of the View Holiday Request icon button" />
@@ -165,8 +171,8 @@ const Dashboard = () => {
                   <>
                     <Divider />
                 
-                    <button className='icon-button view-feedback'>
-                      <img src="./icons/view-feedback-icon-dark.svg" alt="Dark mode version of the View Feedback icon button" />
+                    <button className='icon-button add-user'>
+                      <img src="./icons/add-user-icon-dark.svg" alt="Dark mode version of the Add User icon button" />
                     </button>
                     <button className='icon-button view-holiday-request'>
                       <img src="./icons/view-holiday-request-icon-dark.svg" alt="Dark mode version of the View Holiday Request icon button" />
