@@ -64,10 +64,11 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         <div className="left-container">
           {lightModeActive ? 
             <div className="logo">
-              <img src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo." />
-            </div> : 
+              <img src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo in light mode version." />
+            </div> 
+            : 
             <div className="logo">
-              <img src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo." />
+              <img src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo in dark mode version." />
             </div> 
           }
         
@@ -78,36 +79,49 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         <div className="right-container">
           <div className="light-dark-mode" onClick={ToggleLightAndDarkMode}>
             {lightModeActive ?
-              <img src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> : <img src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
+              <img src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> 
+              : 
+              <img src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
             {lightModeActive ? <>
               {activeLanguage === "Norwegian" && 
-              <img src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />}
+                <img src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />
+              }
               {activeLanguage === "British" && 
-              <img src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />}
+                <img src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />
+              }
               {activeLanguage === "American" && 
-              <img src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />}
+                <img src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />
+              }
             </> : <>
               {activeLanguage === "Norwegian" && 
-              <img src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />}
+                <img src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />
+              }
               {activeLanguage === "British" && 
-              <img src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />}
+                <img src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />
+              }
               {activeLanguage === "American" && 
-              <img src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />}
+                <img src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />
+              }
             </>}
           </div>
 
           {lightModeActive ? 
             <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
             {userLoggedIn ? 
-            <img src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> : 
-            <img src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />}
-          </div> :
+              <img src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> 
+              : 
+              <img src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
+            }
+          </div> 
+          :
           <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
             {userLoggedIn ? 
-            <img src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> : 
-            <img src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />}
+              <img src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> 
+              : 
+              <img src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
+            }
           </div>}
         </div>
       </div>
@@ -159,23 +173,60 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           
                 <Divider />
 
-                <div className="logout">
-                  {activeLanguage === "Norwegian" ? 
-                  <button className="btn" onClick={Logout}>
-                    LOGG UT
-                  </button> : 
-                  <button className="btn" onClick={Logout}>
-                    LOGOUT
-                  </button>}
-                </div>
+                {lightModeActive ? 
+                  <div className="logout">
+                    {activeLanguage === "Norwegian" ? 
+                      <button className="btn" onClick={Logout}>
+                        <img src="./icons/logout-btn-norwegian-light.svg" alt="Lys utgave av den norske logg ut knappen" />
+                      </button> 
+                      : 
+                      <button className="btn" onClick={Logout}>
+                        <img src="./icons/logout-btn-english-light.svg" alt="Light mode version of the english logout button" />
+                      </button>
+                    }
+                  </div> 
+                  : 
+                  <div className="logout">
+                    {activeLanguage === "Norwegian" ? 
+                      <button className="btn" onClick={Logout}>
+                        <img src="./icons/logout-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg ut knappen" />
+                      </button> : 
+                      <button className="btn" onClick={Logout}>
+                        <img src="./icons/logout-btn-english-dark.svg" alt="Dark mode version of the english logout button" />
+                      </button>
+                    }
+                  </div>
+                }
               </>
               
             ) : (
-            <div className="login">
-              {activeLanguage === "Norwegian" ? 
-              <button className="btn" onClick={Login}>LOGG INN</button> : 
-              <button className="btn" onClick={Login}>LOGIN</button>}
-            </div>
+              <>
+              {lightModeActive ?
+                <div className="login">
+                  {activeLanguage === "Norwegian" ? 
+                    <button className="btn" onClick={Login}>
+                      <img src="./icons/login-btn-norwegian-light.svg" alt="Lys utgave av den norske logg inn knappen" />
+                    </button> 
+                    : 
+                    <button className="btn" onClick={Login}>
+                      <img src="./icons/login-btn-english-light.svg" alt="Light mode version of the english login button" />
+                    </button>
+                  }
+                </div> 
+                : 
+                <div className="login">
+                  {activeLanguage === "Norwegian" ? 
+                    <button className="btn" onClick={Login}>
+                      <img src="./icons/login-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg inn knappen" />
+                    </button> 
+                    : 
+                    <button className="btn" onClick={Login}>
+                      <img src="./icons/login-btn-english-dark.svg" alt="Dark mode version of the english login button" />
+                    </button>
+                  }
+                </div> 
+              }
+              </>
             )}
         </div>
       ) : <></>}
