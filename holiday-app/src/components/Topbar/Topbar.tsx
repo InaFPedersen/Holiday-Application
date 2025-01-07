@@ -56,14 +56,6 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
 
   const ToggleLightAndDarkMode = () => {
     setLightModeActive(!lightModeActive);
-
-    // let container = document.getElementsByClassName('container');
-
-    // if(lightModeActive) {
-    //   container.classList.add("light-mode");
-    //   container.classList.remove("dark-mode");
-
-    // }
   }
 
   return (
