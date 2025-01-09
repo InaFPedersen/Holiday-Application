@@ -15,6 +15,7 @@ import HolidayRequestStatus from "./pages/HolidayRequestStatus/HolidayRequestSta
 import HolidayRequest from "./pages/HolidayRequest/HolidayRequest.tsx";
 import Calendars from "./pages/Calendars/Calendars.tsx";
 import Admin from "./pages/Admin/Admin.tsx";
+import EditUser from "./pages/EditUser/EditUser.tsx";
 
 
 export default function Main () {
@@ -29,18 +30,33 @@ export default function Main () {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard lightModeActive={lightModeActive}  isAdmin={isAdmin} isLeader={isLeader} user={user} setUser={setUser} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage}/>} />
-        <Route path='/add-event' element={<AddEvent />} />
-        <Route path='/add-group' element={<AddGroup />} />
+
+        <Route path='/add-event' element={<AddEvent lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/add-group' element={<AddGroup lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
         <Route path='/add-user' element={<AddUser isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
-        <Route path='/admin' element={<Admin />} />
-        <Route path='/calendars' element={<Calendars />} />
-        <Route path='/holiday-request' element={<HolidayRequest />} />
-        <Route path='/holiday-request-status' element={<HolidayRequestStatus />} />
-        <Route path='/information' element={<Information />} />
-        <Route path='/submit-feedback' element={<SubmitFeedback />} />
-        <Route path='/user-guide' element={<UserGuide />} />
-        <Route path='/view-feedback' element={<ViewFeedback />} />
-        <Route path='/view-holiday-request' element={<ViewHolidayRequest />} />
+
+        <Route path='/admin' element={<Admin isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/calendars' element={<Calendars lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/edit-user' element={<EditUser isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/holiday-request' element={<HolidayRequest lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/holiday-request-status' element={<HolidayRequestStatus lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/information' element={<Information lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/submit-feedback' element={<SubmitFeedback lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/user-guide' element={<UserGuide lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/view-feedback' element={<ViewFeedback isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
+        <Route path='/view-holiday-request' element={<ViewHolidayRequest isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
+
       </Routes>
     </BrowserRouter>
   );

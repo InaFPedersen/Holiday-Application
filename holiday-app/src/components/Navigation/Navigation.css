@@ -57,11 +57,11 @@
   grid-column-start: 3;
   grid-column-end: 4;
 }
-.view-holiday-request {
+.edit-user {
   grid-column-start: 1;
   grid-column-end: 2;
 }
-.unknown {
+.view-holiday-request {
   grid-column-start: 2;
   grid-column-end: 3;
 }
@@ -69,6 +69,7 @@
   grid-column-start: 3;
   grid-column-end: 4;
 }
+
 .divider {
   grid-column-start: 1;
   grid-column-end: 4;

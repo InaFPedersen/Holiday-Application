@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import Form from "../../components/Form/Form";
 import Divider from "../../components/Divider";
 import Topbar from "../../components/Topbar/Topbar";
 
@@ -17,7 +18,7 @@ type Props = {
   setActiveLanguage: any
 }
 
-const Admin = ({isAdmin, setIsAdmin, isLeader, setIsLeader, user, setUser, activeLanguage, setActiveLanguage, lightModeActive, setLightModeActive, userLoggedIn, setUserLoggedIn, } : Props) => {
+const EditUser = ({isAdmin, setIsAdmin, isLeader, setIsLeader, user, setUser, activeLanguage, setActiveLanguage, lightModeActive, setLightModeActive, userLoggedIn, setUserLoggedIn, } : Props) => {
   const navigate = useNavigate();
 
   const HandleBackBtnClick = () => {
@@ -39,14 +40,14 @@ const Admin = ({isAdmin, setIsAdmin, isLeader, setIsLeader, user, setUser, activ
                   <div className="back-btn" onClick={HandleBackBtnClick}>
                     <img className="back-btn-img-light" src="./icons/back-btn-norwegian-light.svg" alt="Lys tilbake knapp norsk utgave" max-width={550} max-height={550} />
                   </div>
-                  <h1>Administrator</h1>
+                  <h1>Rediger en bruker</h1>
                 </div>
                 :
                 <div className="flex-container">
                   <div className="back-btn" onClick={HandleBackBtnClick}>
                     <img className="back-btn-img-light" src="./icons/back-btn-english-light.svg" alt="Light back button english version" />
                   </div>
-                  <h1>Administrator</h1>
+                  <h1>Edit a user</h1>
                 </div>
               }
               <Divider />
@@ -58,19 +59,21 @@ const Admin = ({isAdmin, setIsAdmin, isLeader, setIsLeader, user, setUser, activ
                   <div className="back-btn" onClick={HandleBackBtnClick}>
                     <img className="back-btn-img-dark" src="./icons/back-btn-norwegian-dark.svg" alt="Mørk tilbake knapp norsk utgave" />
                   </div>
-                  <h1>Administrator</h1>
+                  <h1>Rediger en bruker</h1>
                 </div>
                 :
                 <div className="flex-container">
                   <div className="back-btn" onClick={HandleBackBtnClick}>
                     <img className="back-btn-img-dark" src="./icons/back-btn-english-dark.svg" alt="Dark back button english version" />
                   </div>
-                  <h1>Administrator</h1>
+                  <h1>Edit a user</h1>
                 </div>
               }
               <Divider />
             </header>
           }
+          
+          <Form isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} />
           
         </div>
       </div>
@@ -79,4 +82,4 @@ const Admin = ({isAdmin, setIsAdmin, isLeader, setIsLeader, user, setUser, activ
   )
 }
 
-export default Admin;
+export default EditUser;

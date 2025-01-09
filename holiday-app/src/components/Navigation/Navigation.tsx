@@ -67,6 +67,11 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
     navigate('/add-user');
   }
 
+  const EditUserBtnClicked = () => {
+    // Direct user to Add User page
+    navigate('/edit-user');
+  }
+
   const ViewHolidayRequestBtnClicked = () => {
     // Direct user to ViewHolidayRequest page
     navigate('/view-holiday-request');
@@ -114,6 +119,9 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
                   <div className='icon-button add-user' onClick={AddUserBtnClicked}>
                     <img src="./icons/add-user-icon-light.svg" alt="Light mode version of the Add User icon button" />
                   </div>
+                  <div className='icon-button edit-user' onClick={EditUserBtnClicked}>
+                    <img src="./icons/edit-user-icon-light.svg" alt="Light mode version of the Edit User icon button" />
+                  </div>
                   <div className='icon-button view-holiday-request' onClick={ViewHolidayRequestBtnClicked}>
                     <img src="./icons/view-holiday-request-icon-light.svg" alt="Light mode version of the View Holiday Request icon button" />
                   </div>
@@ -155,6 +163,9 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
                   </div>
                   <div className='icon-button add-user' onClick={AddUserBtnClicked}>
                     <img src="./icons/add-user-icon-dark.svg" alt="Dark mode version of the Add User icon button" />
+                  </div>
+                  <div className='icon-button edit-user' onClick={EditUserBtnClicked}>
+                    <img src="./icons/edit-user-icon-dark.svg" alt="Dark mode version of the Edit User icon button" />
                   </div>
                   <div className='icon-button view-holiday-request' onClick={ViewHolidayRequestBtnClicked}>
                     <img src="./icons/view-holiday-request-icon-dark.svg" alt="Dark mode version of the View Holiday Request icon button" />
@@ -198,6 +209,9 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
                       <div className='icon-button add-user' onClick={AddUserBtnClicked}>
                         <img src="./icons/add-user-icon-light.svg" alt="Light mode version of the Add User icon button" />
                       </div>
+                      <div className='icon-button edit-user' onClick={EditUserBtnClicked}>
+                        <img src="./icons/edit-user-icon-light.svg" alt="Light mode version of the Edit User icon button" />
+                      </div>
                       <div className='icon-button view-holiday-request' onClick={ViewHolidayRequestBtnClicked}>
                         <img src="./icons/view-holiday-request-icon-light.svg" alt="Light mode version of the View Holiday Request icon button" />
                       </div>
@@ -237,6 +251,9 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
                   
                       <div className='icon-button add-user' onClick={AddUserBtnClicked}>
                         <img src="./icons/add-user-icon-dark.svg" alt="Dark mode version of the Add User icon button" />
+                      </div>
+                      <div className='icon-button edit-user' onClick={EditUserBtnClicked}>
+                        <img src="./icons/edit-user-icon-dark.svg" alt="Dark mode version of the Edit User icon button" />
                       </div>
                       <div className='icon-button view-holiday-request' onClick={ViewHolidayRequestBtnClicked}>
                         <img src="./icons/view-holiday-request-icon-dark.svg" alt="Dark mode version of the View Holiday Request icon button" />
