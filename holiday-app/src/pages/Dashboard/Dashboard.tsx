@@ -1,19 +1,23 @@
-import { useState } from 'react';
-import Topbar from './components/Topbar/Topbar'
+import Topbar from '../../components/Topbar/Topbar'
 import './Dashboard.css'
-import Divider from './components/Divider';
-import Navigation from './components/Navigation/Navigation';
-import Calendar from './components/Calendar/Calendar';
+import Navigation from '../../components/Navigation/Navigation';
+import Calendar from '../../components/Calendar/Calendar';
 
-const Dashboard = () => {
-  // Global states
-  const [user, setUser] = useState('');
-  const [lightModeActive, setLightModeActive] = useState(true);
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [activeLanguage, setActiveLanguage] = useState('Norwegian');
-  const [isAdmin, setIsAdmin] = useState(true);
-  const [isLeader, setIsLeader] = useState(true);
+type Props = {
+  lightModeActive: boolean, 
+  setLightModeActive: any,
+  isAdmin: boolean,
+  isLeader: boolean,
+  user: string,
+  setUser: any,
+  userLoggedIn: boolean,
+  setUserLoggedIn: any,
+  activeLanguage: string,
+  setActiveLanguage: any
+}
 
+const Dashboard = ({lightModeActive, isAdmin, isLeader, user, setUser, setLightModeActive, userLoggedIn, setUserLoggedIn, activeLanguage, setActiveLanguage} : Props) => {
+  
   return (
     <div className={lightModeActive ? 'light-mode' : 'dark-mode'}>
       <div className='grid-container'>

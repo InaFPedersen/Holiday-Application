@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import Divider from "../Divider";
 import './Navigation.css';
 
@@ -9,52 +10,66 @@ type Props = {
 
 const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
 
+  let navigate = useNavigate();
+  
   const InformationBtnClicked = () => {
     // Direct user to information page
+    navigate('/information');
   }
 
   const UserGuideBtnClicked = () => {
     // Direct user to User Guide page
+    navigate('/user-guide');
   }
 
   const CalendarsBtnClicked = () => {
     // Direct user to Calendars page
+    navigate('/calendars');
   }
 
   const HolidayRequestBtnClicked = () => {
     // Direct user to Holiday Request page
+    navigate('/holiday-request');
   }
 
   const AddGroupBtnClicked = () => {
     // Direct user to Add Group page
+    navigate('/add-group');
   }
 
   const AddEventBtnClicked = () => {
     // Direct user to Add Event page
+    navigate('/add-event');
   }
 
   const SubmitFeedbackBtnClicked = () => {
     // Direct user to Submit Feedback page
+    navigate('/submit-feedback');
   }
 
   const HolidayRequestStatusBtnClicked = () => {
     // Direct user to Holiday Request Status page
+    navigate('/holiday-request-status');
   }
 
-  const AdminPageBtnClicked = () => {
+  const AdminBtnClicked = () => {
     // Direct user to Admin page
+    navigate('/admin');
   }
 
   const ViewFeedbackBtnClicked = () => {
     // Direct user to View Feedback page
+    navigate('/view-feedback');
   }
 
   const AddUserBtnClicked = () => {
     // Direct user to Add User page
+    navigate('/add-user');
   }
 
   const ViewHolidayRequestBtnClicked = () => {
     // Direct user to ViewHolidayRequest page
+    navigate('/view-holiday-request');
   }
 
   return (
@@ -90,8 +105,8 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
 
                   <Divider  />
 
-                  <div className='icon-button admin-page' onClick={AdminPageBtnClicked}>
-                    <img src="./icons/admin-page-icon-light.svg" alt="Light mode version of the Admin Page icon button" />
+                  <div className='icon-button admin' onClick={AdminBtnClicked}>
+                    <img src="./icons/admin-icon-light.svg" alt="Light mode version of the Admin icon button" />
                   </div>
                   <div className='icon-button view-feedback' onClick={ViewFeedbackBtnClicked}>
                     <img src="./icons/view-feedback-icon-light.svg" alt="Light mode version of the View Feedback icon button" />
@@ -132,8 +147,8 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
 
                   <Divider />
 
-                  <div className='icon-button admin-page' onClick={AdminPageBtnClicked}>
-                    <img src="./icons/admin-page-icon-dark.svg" alt="Dark mode version of the Admin Page icon button" />
+                  <div className='icon-button admin' onClick={AdminBtnClicked}>
+                    <img src="./icons/admin-icon-dark.svg" alt="Dark mode version of the Admin icon button" />
                   </div>
                   <div className='icon-button view-feedback' onClick={ViewFeedbackBtnClicked}>
                     <img src="./icons/view-feedback-icon-dark.svg" alt="Dark mode version of the View Feedback icon button" />
