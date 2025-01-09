@@ -1,11 +1,11 @@
-const Admin = () => {
+const AddEvent = () => {
   //code here
 
   return (
     <div className="container">
-      <h1>Admin</h1>
+      <h1>Add Event</h1>
     </div>
   )
 }
 
-export default Admin;
+export default AddEvent;
