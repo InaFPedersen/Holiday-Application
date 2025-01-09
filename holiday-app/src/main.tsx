@@ -31,7 +31,7 @@ export default function Main () {
         <Route path="/" element={<Dashboard lightModeActive={lightModeActive}  isAdmin={isAdmin} isLeader={isLeader} user={user} setUser={setUser} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage}/>} />
         <Route path='/add-event' element={<AddEvent />} />
         <Route path='/add-group' element={<AddGroup />} />
-        <Route path='/add-user' element={<AddUser isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} />} />
+        <Route path='/add-user' element={<AddUser isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLeader={isLeader} setIsLeader={setIsLeader} user={user} setUser={setUser} lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
         <Route path='/admin' element={<Admin />} />
         <Route path='/calendars' element={<Calendars />} />
         <Route path='/holiday-request' element={<HolidayRequest />} />

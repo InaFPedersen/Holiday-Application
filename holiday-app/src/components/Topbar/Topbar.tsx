@@ -59,16 +59,16 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
   }
 
   return (
-    <div className={lightModeActive ? 'topbar-light-mode' : 'topbar-dark-mode'}>
+    <div className={`${lightModeActive ? 'topbar-container-light' : 'topbar-container-dark'} ${lightModeActive ? 'component-light-mode' : 'component-dark-mode'}`}>
       <div className="topbar">
         <div className="left-container">
           {lightModeActive ? 
             <div className="logo">
-              <img src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo in light mode version." />
+              <img className="topbar-img" src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo in light mode version." />
             </div> 
             : 
             <div className="logo">
-              <img src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo in dark mode version." />
+              <img className="topbar-img" src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo in dark mode version." />
             </div> 
           }
         
@@ -79,30 +79,30 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         <div className="right-container">
           <div className="light-dark-mode" onClick={ToggleLightAndDarkMode}>
             {lightModeActive ?
-              <img src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> 
+              <img className="topbar-img" src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> 
               : 
-              <img src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
+              <img className="topbar-img" src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
             {lightModeActive ? <>
               {activeLanguage === "Norwegian" && 
-                <img src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />
               }
               {activeLanguage === "British" && 
-                <img src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />
               }
               {activeLanguage === "American" && 
-                <img src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />
               }
             </> : <>
               {activeLanguage === "Norwegian" && 
-                <img src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />
               }
               {activeLanguage === "British" && 
-                <img src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />
               }
               {activeLanguage === "American" && 
-                <img src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />
+                <img className="topbar-img" src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />
               }
             </>}
           </div>
@@ -110,17 +110,17 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           {lightModeActive ? 
             <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
             {userLoggedIn ? 
-              <img src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> 
+              <img className="topbar-img" src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> 
               : 
-              <img src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
+              <img className="topbar-img" src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
             }
           </div> 
           :
           <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
             {userLoggedIn ? 
-              <img src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> 
+              <img className="topbar-img" src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> 
               : 
-              <img src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
+              <img className="topbar-img" src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
             }
           </div>}
         </div>
@@ -130,35 +130,35 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         <div className="flag-dropdown">
           {lightModeActive ? <>
             <div className="norway" onClick={ChangeLanguageToNorwegian}>
-              <img src="./icons/Norway-icon-light.svg" alt="Flag of Norway." />
+              <img className="topbar-img" src="./icons/Norway-icon-light.svg" alt="Flag of Norway." />
             </div>
 
             <Divider />
 
             <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
-              <img src="./icons/UK-icon-light.svg" alt="Flag of United Kingdom." />
+              <img className="topbar-img" src="./icons/UK-icon-light.svg" alt="Flag of United Kingdom." />
             </div>
               
             <Divider />
                 
             <div className="united-states" onClick={ChangeLanguageToAmerican}>
-              <img src="./icons/USA-icon-light.svg" alt="Flag of United States of America." />
+              <img className="topbar-img" src="./icons/USA-icon-light.svg" alt="Flag of United States of America." />
             </div>
           </> : <>
             <div className="norway" onClick={ChangeLanguageToNorwegian}>
-              <img src="./icons/Norway-icon-dark.svg" alt="Flag of Norway." />
+              <img className="topbar-img" src="./icons/Norway-icon-dark.svg" alt="Flag of Norway." />
             </div>
 
             <Divider />
 
             <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
-              <img src="./icons/UK-icon-dark.svg" alt="Flag of United Kingdom." />
+              <img className="topbar-img" src="./icons/UK-icon-dark.svg" alt="Flag of United Kingdom." />
             </div>
               
             <Divider />
                 
             <div className="united-states" onClick={ChangeLanguageToAmerican}>
-              <img src="./icons/USA-icon-dark.svg" alt="Flag of United States of America." />
+              <img className="topbar-img" src="./icons/USA-icon-dark.svg" alt="Flag of United States of America." />
             </div>
           </>}
           
@@ -177,11 +177,11 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
                   <div className="logout">
                     {activeLanguage === "Norwegian" ? 
                       <button className="btn" onClick={Logout}>
-                        <img src="./icons/logout-btn-norwegian-light.svg" alt="Lys utgave av den norske logg ut knappen" />
+                        <img className="topbar-img" src="./icons/logout-btn-norwegian-light.svg" alt="Lys utgave av den norske logg ut knappen" />
                       </button> 
                       : 
                       <button className="btn" onClick={Logout}>
-                        <img src="./icons/logout-btn-english-light.svg" alt="Light mode version of the english logout button" />
+                        <img className="topbar-img" src="./icons/logout-btn-english-light.svg" alt="Light mode version of the english logout button" />
                       </button>
                     }
                   </div> 
@@ -189,10 +189,10 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
                   <div className="logout">
                     {activeLanguage === "Norwegian" ? 
                       <button className="btn" onClick={Logout}>
-                        <img src="./icons/logout-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg ut knappen" />
+                        <img className="topbar-img" src="./icons/logout-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg ut knappen" />
                       </button> : 
                       <button className="btn" onClick={Logout}>
-                        <img src="./icons/logout-btn-english-dark.svg" alt="Dark mode version of the english logout button" />
+                        <img className="topbar-img" src="./icons/logout-btn-english-dark.svg" alt="Dark mode version of the english logout button" />
                       </button>
                     }
                   </div>
@@ -205,11 +205,11 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
                 <div className="login">
                   {activeLanguage === "Norwegian" ? 
                     <button className="btn" onClick={Login}>
-                      <img src="./icons/login-btn-norwegian-light.svg" alt="Lys utgave av den norske logg inn knappen" />
+                      <img className="topbar-img" src="./icons/login-btn-norwegian-light.svg" alt="Lys utgave av den norske logg inn knappen" />
                     </button> 
                     : 
                     <button className="btn" onClick={Login}>
-                      <img src="./icons/login-btn-english-light.svg" alt="Light mode version of the english login button" />
+                      <img className="topbar-img" src="./icons/login-btn-english-light.svg" alt="Light mode version of the english login button" />
                     </button>
                   }
                 </div> 
@@ -217,11 +217,11 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
                 <div className="login">
                   {activeLanguage === "Norwegian" ? 
                     <button className="btn" onClick={Login}>
-                      <img src="./icons/login-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg inn knappen" />
+                      <img className="topbar-img" src="./icons/login-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg inn knappen" />
                     </button> 
                     : 
                     <button className="btn" onClick={Login}>
-                      <img src="./icons/login-btn-english-dark.svg" alt="Dark mode version of the english login button" />
+                      <img className="topbar-img" src="./icons/login-btn-english-dark.svg" alt="Dark mode version of the english login button" />
                     </button>
                   }
                 </div> 

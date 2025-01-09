@@ -7,19 +7,15 @@
   
 }
 
-.topbar-light-mode {
-  background-color: #d4d4d4;
-  color: #000;
+.topbar-container-light {
   border-bottom: 1px solid #000;
 }
 
-.topbar-dark-mode {
-  background-color: #454545;
-  color: #fff;
+.topbar-container-dark {
   border-bottom: 1px solid #fff;
 }
 
-img {
+.topbar-img {
   max-width: 55px;
   max-height: 55px;
 }

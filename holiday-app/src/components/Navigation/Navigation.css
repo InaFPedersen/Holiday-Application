@@ -1,14 +1,4 @@
-.navigation-light-mode {
-  background-color: #d4d4d4;
-  border: 1px solid #000;
-}
-
-.navigation-dark-mode {
-  background-color: #454545;
-  border: 1px solid #fff;
-}
-
-.navigation-dark-mode, .navigation-light-mode {
+.navigational-container {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 10px;

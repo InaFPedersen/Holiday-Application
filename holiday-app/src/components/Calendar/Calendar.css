@@ -1,14 +1,4 @@
-.calendar-light-mode {
-  background-color: #d4d4d4;
-  border: 1px solid #000;
-}
-
-.calendar-dark-mode {
-  background-color: #454545;
-  border: 1px solid #fff;
-}
-
-.calendar-dark-mode, .calendar-light-mode {
+.calendar-container {
   border-radius: 15px;
   padding: 10px;
 }

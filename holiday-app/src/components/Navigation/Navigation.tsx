@@ -73,7 +73,7 @@ const Navigation = ({lightModeActive, isAdmin, isLeader} : Props) => {
   }
 
   return (
-    <div className={lightModeActive ? 'navigation-light-mode' : 'navigation-dark-mode'}>
+    <div className={`navigational-container ${lightModeActive ? 'component-light-mode' : 'component-dark-mode'}`}>
             {isAdmin ? (
               <>
               {lightModeActive ? 
