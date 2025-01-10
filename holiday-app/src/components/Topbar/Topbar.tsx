@@ -3,6 +3,8 @@ import "./Topbar.css";
 import Divider from "../Divider";
 import FlagIcon from "../FlagIcon/FlagIcon";
 import FlagDropdown from "../FlagDropdown/FlagDropdown";
+import Logo from "../Logo/Logo";
+import LightDarkModeIcon from "../LightDarkModeIcon/LightDarkModeIcon";
 
 type Props = {
   user: string, 
@@ -50,13 +52,9 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
       <div className="topbar">
         <div className="left-container">
           {lightModeActive ? 
-            <div className="logo">
-              <img className="topbar-img" src="./icons/logo-fictional-icon-light.svg" alt="Image of the holiday application's logo in light mode version." />
-            </div> 
+            <Logo mode="light"/>
             : 
-            <div className="logo">
-              <img className="topbar-img" src="./icons/logo-fictional-icon-dark.svg" alt="Image of the holiday application's logo in dark mode version." />
-            </div> 
+            <Logo mode="light"/>
           }
         
         <div className="app-title">
@@ -66,9 +64,10 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
         <div className="right-container">
           <div className="light-dark-mode" onClick={ToggleLightAndDarkMode}>
             {lightModeActive ?
-              <img className="topbar-img" src="./icons/dark-light-icon-light.svg" alt="Light/dark mode icon for switching between light and dark mode." /> 
+              <LightDarkModeIcon mode="light" />
               : 
-              <img className="topbar-img" src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
+              <LightDarkModeIcon mode="dark" /> 
+            }
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
             {lightModeActive ? 
