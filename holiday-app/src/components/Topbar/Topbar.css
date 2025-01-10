@@ -54,11 +54,8 @@
   position: absolute;
   right: 90px;
   top: 75px;
-  background-color: lightgray;
-  height: 200px;
-  padding: 2px;
-  width: 80px;
-  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,13 +65,12 @@
 
 .profile-dropdown {
   position: absolute;
-  right: 5px;
+  right: 25px;
   top: 75px;
   background-color: lightgray;
-  padding: 2px;
-  height: 100px;
-  width: 250px;
-  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

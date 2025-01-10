@@ -32,11 +32,13 @@
 .component-light-mode {
   background-color: #d4d4d4;
   color: #000;
+  border: 1px solid #000;
 }
 
 .component-dark-mode {
   background-color: #454545;
   color: #fff;
+  border: 1px solid #fff;
 }
 
 .flex-container {

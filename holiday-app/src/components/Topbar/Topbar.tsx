@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Topbar.css";
 import Divider from "../Divider";
+import FlagIcon from "../FlagIcon/FlagIcon";
+import FlagDropdown from "../FlagDropdown/FlagDropdown";
 
 type Props = {
   user: string, 
@@ -40,17 +42,17 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
   }
 
   const ChangeLanguageToNorwegian = () => {
-    setActiveLanguage(activeLanguage = "Norwegian");
+    setActiveLanguage(activeLanguage = "norwegian");
     setFlagOpen(false);
   }
 
   const ChangeLanguageToBritish = () => {
-    setActiveLanguage(activeLanguage = "British");
+    setActiveLanguage(activeLanguage = "british");
     setFlagOpen(false);
   }
 
   const ChangeLanguageToAmerican = () => {
-    setActiveLanguage(activeLanguage = "American");
+    setActiveLanguage(activeLanguage = "american");
     setFlagOpen(false);
   }
 
@@ -73,7 +75,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           }
         
         <div className="app-title">
-          {activeLanguage === 'Norwegian' ? <h1>Ferie applikasjonen</h1> : <h1>The Holiday application</h1>}
+          {activeLanguage === 'norwegian' ? <h1>Ferie applikasjonen</h1> : <h1>The Holiday application</h1>}
         </div>
         </div>
         <div className="right-container">
@@ -84,25 +86,26 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
               <img className="topbar-img" src="./icons/dark-light-icon-dark.svg" alt="Light/dark mode icon for switching between light and dark mode." /> }
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
-            {lightModeActive ? <>
-              {activeLanguage === "Norwegian" && 
-                <img className="topbar-img" src="./icons/Norway-icon-light.svg" alt="Norwegian Flag icon for switching language." />
+            {lightModeActive ? 
+            <>
+              {activeLanguage === "norwegian" && 
+                <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"light"} />
               }
-              {activeLanguage === "British" && 
-                <img className="topbar-img" src="./icons/UK-icon-light.svg" alt="British Flag icon for switching language." />
+              {activeLanguage === "british" && 
+                <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"light"} />
               }
-              {activeLanguage === "American" && 
-                <img className="topbar-img" src="./icons/USA-icon-light.svg" alt="American Flag icon for switching language." />
+              {activeLanguage === "american" && 
+                <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"light"} />
               }
             </> : <>
-              {activeLanguage === "Norwegian" && 
-                <img className="topbar-img" src="./icons/Norway-icon-dark.svg" alt="Norwegian Flag icon for switching language." />
+              {activeLanguage === "norwegian" && 
+                <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"dark"} />
               }
-              {activeLanguage === "British" && 
-                <img className="topbar-img" src="./icons/UK-icon-dark.svg" alt="British Flag icon for switching language." />
+              {activeLanguage === "british" && 
+                <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"dark"} />
               }
-              {activeLanguage === "American" && 
-                <img className="topbar-img" src="./icons/USA-icon-dark.svg" alt="American Flag icon for switching language." />
+              {activeLanguage === "american" && 
+                <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"dark"} />
               }
             </>}
           </div>
@@ -127,42 +130,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
       </div>
       
       {flagOpen ? (
-        <div className="flag-dropdown">
-          {lightModeActive ? <>
-            <div className="norway" onClick={ChangeLanguageToNorwegian}>
-              <img className="topbar-img" src="./icons/Norway-icon-light.svg" alt="Flag of Norway." />
-            </div>
-
-            <Divider />
-
-            <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
-              <img className="topbar-img" src="./icons/UK-icon-light.svg" alt="Flag of United Kingdom." />
-            </div>
-              
-            <Divider />
-                
-            <div className="united-states" onClick={ChangeLanguageToAmerican}>
-              <img className="topbar-img" src="./icons/USA-icon-light.svg" alt="Flag of United States of America." />
-            </div>
-          </> : <>
-            <div className="norway" onClick={ChangeLanguageToNorwegian}>
-              <img className="topbar-img" src="./icons/Norway-icon-dark.svg" alt="Flag of Norway." />
-            </div>
-
-            <Divider />
-
-            <div className="united-kingdom" onClick={ChangeLanguageToBritish}>
-              <img className="topbar-img" src="./icons/UK-icon-dark.svg" alt="Flag of United Kingdom." />
-            </div>
-              
-            <Divider />
-                
-            <div className="united-states" onClick={ChangeLanguageToAmerican}>
-              <img className="topbar-img" src="./icons/USA-icon-dark.svg" alt="Flag of United States of America." />
-            </div>
-          </>}
-          
-        </div>
+        <FlagDropdown lightModeActive={lightModeActive} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} setFlagOpen={setFlagOpen} />
       ) : <></>}
 
       {profileOpen ? (

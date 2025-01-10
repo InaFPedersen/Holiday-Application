@@ -22,7 +22,7 @@ export default function Main () {
   const [user, setUser] = useState('');
   const [lightModeActive, setLightModeActive] = useState(true);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [activeLanguage, setActiveLanguage] = useState('Norwegian');
+  const [activeLanguage, setActiveLanguage] = useState('norwegian');
   const [isAdmin, setIsAdmin] = useState(true);
   const [isLeader, setIsLeader] = useState(true);
 
