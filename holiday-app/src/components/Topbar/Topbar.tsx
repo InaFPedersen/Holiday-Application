@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./Topbar.css";
-import FlagIcon from "../FlagIcon/FlagIcon";
 import FlagDropdown from "../FlagDropdown/FlagDropdown";
-import Logo from "../Logo/Logo";
+import FlagIcon from "../FlagIcon/FlagIcon";
 import LightDarkModeIcon from "../LightDarkModeIcon/LightDarkModeIcon";
-import ProfileIcon from "../ProfileIcon/ProfileIcon";
+import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import ProfileIcon from "../ProfileIcon/ProfileIcon";
+import "./Topbar.css";
 
 type Props = {
   user: string, 
@@ -19,18 +19,8 @@ type Props = {
 }
 
 const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedIn, setUserLoggedIn, activeLanguage, setActiveLanguage} : Props) => {
-  // Variables
-  // const userName = "";
-
-  // State
   const [profileOpen, setProfileOpen] = useState(false);
   const [flagOpen, setFlagOpen] = useState(false);
-
-  
-
-  const ToggleLightAndDarkMode = () => {
-    setLightModeActive(!lightModeActive);
-  }
 
   return (
     <div className={`${lightModeActive ? 'topbar-container-light' : 'topbar-container-dark'} ${lightModeActive ? 'component-light-mode' : 'component-dark-mode'}`}>
@@ -42,21 +32,23 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
             <Logo mode="light"/>
           }
         
-        <div className="app-title">
-          {activeLanguage === 'norwegian' ? 
-            <h1>Ferie applikasjonen</h1> 
-            : 
-            <h1>The Holiday application</h1>}
+          <div className="app-title">
+            {activeLanguage === 'norwegian' ? 
+              <h1>Ferie applikasjonen</h1> 
+              : 
+              <h1>The Holiday application</h1>}
+          </div>
         </div>
-        </div>
+
         <div className="right-container">
-          <div className="light-dark-mode" onClick={ToggleLightAndDarkMode}>
+          <div className="light-dark-mode" onClick={() => setLightModeActive(!lightModeActive)}>
             {lightModeActive ?
               <LightDarkModeIcon mode="light" />
               : 
               <LightDarkModeIcon mode="dark" /> 
             }
           </div>
+
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
             {lightModeActive ? 
               <>
@@ -114,7 +106,6 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
       {profileOpen ? (
         <ProfileDropdown activeLanguage={activeLanguage} lightModeActive={lightModeActive} setProfileOpen={setProfileOpen} setUser={setUser} setUserLoggedIn={setUserLoggedIn} user={user} userLoggedIn={userLoggedIn} />
       ) : <></>}
-      
     </div>
   )
 }
