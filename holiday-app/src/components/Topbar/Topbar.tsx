@@ -41,21 +41,6 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
     setProfileOpen(false)
   }
 
-  const ChangeLanguageToNorwegian = () => {
-    setActiveLanguage(activeLanguage = "norwegian");
-    setFlagOpen(false);
-  }
-
-  const ChangeLanguageToBritish = () => {
-    setActiveLanguage(activeLanguage = "british");
-    setFlagOpen(false);
-  }
-
-  const ChangeLanguageToAmerican = () => {
-    setActiveLanguage(activeLanguage = "american");
-    setFlagOpen(false);
-  }
-
   const ToggleLightAndDarkMode = () => {
     setLightModeActive(!lightModeActive);
   }
