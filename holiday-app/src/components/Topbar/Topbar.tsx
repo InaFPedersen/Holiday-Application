@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./Topbar.css";
-import Divider from "../Divider";
 import FlagIcon from "../FlagIcon/FlagIcon";
 import FlagDropdown from "../FlagDropdown/FlagDropdown";
 import Logo from "../Logo/Logo";
 import LightDarkModeIcon from "../LightDarkModeIcon/LightDarkModeIcon";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
+import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 
 type Props = {
   user: string, 
@@ -26,23 +26,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
   const [profileOpen, setProfileOpen] = useState(false);
   const [flagOpen, setFlagOpen] = useState(false);
 
-  const Logout = () => {
-    // Send logout request
-    
-    setUserLoggedIn(userLoggedIn = false);
-    setUser(user = "");
-    setProfileOpen(false)
-  }
-
-  const Login = () => {
-    // Send a login request
-    // send Get request to get the person's userName and set userName to the logged in persons.
-    // UserName = getUserName(); fetch()
-    // setUser(user = `${userName}`);
-    setUser(user = "Nora Norman")
-    setUserLoggedIn(true);
-    setProfileOpen(false)
-  }
+  
 
   const ToggleLightAndDarkMode = () => {
     setLightModeActive(!lightModeActive);
@@ -128,69 +112,7 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
       ) : <></>}
 
       {profileOpen ? (
-        <div className="profile-dropdown">
-            {userLoggedIn ? (
-              <>
-                <div className="user">{user}</div>
-          
-                <Divider />
-
-                {lightModeActive ? 
-                  <div className="logout">
-                    {activeLanguage === "Norwegian" ? 
-                      <button className="btn" onClick={Logout}>
-                        <img className="topbar-img" src="./icons/logout-btn-norwegian-light.svg" alt="Lys utgave av den norske logg ut knappen" />
-                      </button> 
-                      : 
-                      <button className="btn" onClick={Logout}>
-                        <img className="topbar-img" src="./icons/logout-btn-english-light.svg" alt="Light mode version of the english logout button" />
-                      </button>
-                    }
-                  </div> 
-                  : 
-                  <div className="logout">
-                    {activeLanguage === "Norwegian" ? 
-                      <button className="btn" onClick={Logout}>
-                        <img className="topbar-img" src="./icons/logout-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg ut knappen" />
-                      </button> : 
-                      <button className="btn" onClick={Logout}>
-                        <img className="topbar-img" src="./icons/logout-btn-english-dark.svg" alt="Dark mode version of the english logout button" />
-                      </button>
-                    }
-                  </div>
-                }
-              </>
-              
-            ) : (
-              <>
-              {lightModeActive ?
-                <div className="login">
-                  {activeLanguage === "Norwegian" ? 
-                    <button className="btn" onClick={Login}>
-                      <img className="topbar-img" src="./icons/login-btn-norwegian-light.svg" alt="Lys utgave av den norske logg inn knappen" />
-                    </button> 
-                    : 
-                    <button className="btn" onClick={Login}>
-                      <img className="topbar-img" src="./icons/login-btn-english-light.svg" alt="Light mode version of the english login button" />
-                    </button>
-                  }
-                </div> 
-                : 
-                <div className="login">
-                  {activeLanguage === "Norwegian" ? 
-                    <button className="btn" onClick={Login}>
-                      <img className="topbar-img" src="./icons/login-btn-norwegian-dark.svg" alt="Mørk utgave av den norske logg inn knappen" />
-                    </button> 
-                    : 
-                    <button className="btn" onClick={Login}>
-                      <img className="topbar-img" src="./icons/login-btn-english-dark.svg" alt="Dark mode version of the english login button" />
-                    </button>
-                  }
-                </div> 
-              }
-              </>
-            )}
-        </div>
+        <ProfileDropdown activeLanguage={activeLanguage} lightModeActive={lightModeActive} setProfileOpen={setProfileOpen} setUser={setUser} setUserLoggedIn={setUserLoggedIn} user={user} userLoggedIn={userLoggedIn} />
       ) : <></>}
       
     </div>
