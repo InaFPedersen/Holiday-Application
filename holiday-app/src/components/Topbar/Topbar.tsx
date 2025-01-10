@@ -5,6 +5,7 @@ import FlagIcon from "../FlagIcon/FlagIcon";
 import FlagDropdown from "../FlagDropdown/FlagDropdown";
 import Logo from "../Logo/Logo";
 import LightDarkModeIcon from "../LightDarkModeIcon/LightDarkModeIcon";
+import ProfileIcon from "../ProfileIcon/ProfileIcon";
 
 type Props = {
   user: string, 
@@ -58,7 +59,10 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           }
         
         <div className="app-title">
-          {activeLanguage === 'norwegian' ? <h1>Ferie applikasjonen</h1> : <h1>The Holiday application</h1>}
+          {activeLanguage === 'norwegian' ? 
+            <h1>Ferie applikasjonen</h1> 
+            : 
+            <h1>The Holiday application</h1>}
         </div>
         </div>
         <div className="right-container">
@@ -71,45 +75,51 @@ const Topbar = ({user, setUser, lightModeActive, setLightModeActive, userLoggedI
           </div>
           <div className="language-flag" onClick={() => setFlagOpen(!flagOpen)}>
             {lightModeActive ? 
-            <>
-              {activeLanguage === "norwegian" && 
-                <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"light"} />
-              }
-              {activeLanguage === "british" && 
-                <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"light"} />
-              }
-              {activeLanguage === "american" && 
-                <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"light"} />
-              }
-            </> : <>
-              {activeLanguage === "norwegian" && 
-                <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"dark"} />
-              }
-              {activeLanguage === "british" && 
-                <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"dark"} />
-              }
-              {activeLanguage === "american" && 
-                <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"dark"} />
-              }
-            </>}
+              <>
+                {activeLanguage === "norwegian" && 
+                  <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"light"} />
+                }
+                {activeLanguage === "british" && 
+                  <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"light"} />
+                }
+                {activeLanguage === "american" && 
+                  <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"light"} />
+                }
+              </> 
+              : 
+              <>
+                {activeLanguage === "norwegian" && 
+                  <FlagIcon country={"norway"} countryLanguage={"norwegian"} mode={"dark"} />
+                }
+                {activeLanguage === "british" && 
+                  <FlagIcon country={"united-kingdom"} countryLanguage={"british"} mode={"dark"} />
+                }
+                {activeLanguage === "american" && 
+                  <FlagIcon country={"united-states"} countryLanguage={"american"} mode={"dark"} />
+                }
+              </>
+            }
           </div>
 
-          {lightModeActive ? 
-            <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
-            {userLoggedIn ? 
-              <img className="topbar-img" src="./icons/logged-in-profile-icon-light.svg" alt="Profile icon, with green color symbolising logged in" /> 
-              : 
-              <img className="topbar-img" src="./icons/profile-icon-light.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
-            }
-          </div> 
-          :
           <div className="profile" onClick={() => setProfileOpen(!profileOpen)}>
-            {userLoggedIn ? 
-              <img className="topbar-img" src="./icons/logged-in-profile-icon-dark.svg" alt="Profile icon, with green color symbolising logged in" /> 
-              : 
-              <img className="topbar-img" src="./icons/profile-icon-dark.svg" alt="Profile icon, with black and white symbolising noone is logged in" />
+            {lightModeActive ? 
+              <>
+                {userLoggedIn ? 
+                  <ProfileIcon mode={'light'} name={'logged-in-profile'} coloring={"green"} status={"logged in"} /> 
+                  : 
+                  <ProfileIcon mode={'light'} name={'profile'} coloring={"black and white"} status={"not logged in"} /> 
+                }
+              </> 
+              :
+              <>
+                {userLoggedIn ? 
+                  <ProfileIcon mode={'dark'} name={'logged-in-profile'} coloring={"green"} status={"logged in"} />
+                  : 
+                  <ProfileIcon mode={'dark'} name={'profile'} coloring={"black and white"} status={"not logged in"} />
+                }
+              </>
             }
-          </div>}
+          </div>
         </div>
       </div>
       
