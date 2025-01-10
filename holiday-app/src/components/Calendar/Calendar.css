@@ -2,3 +2,19 @@
   border-radius: 15px;
   padding: 10px;
 }
+
+.calendar-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.calendar-navigation-text {
+  font-size: 36px;
+}
+
+.arrow-btn-img {
+  max-width: 55px;
+  max-height: 55px;
+}
