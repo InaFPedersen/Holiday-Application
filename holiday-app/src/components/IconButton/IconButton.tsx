@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router";
+import './IconButton.css';
 
 type Props = {
   pageName: string,
