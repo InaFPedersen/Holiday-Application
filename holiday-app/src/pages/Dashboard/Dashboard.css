@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'welcome welcome'
+    'navigation personal';
+  gap: 10px;
+}
+
+.welcome-message {
+  grid-area: welcome;
+  padding: 10px;
+}
+
+.navigation-container {
+  grid-area: navigation;
+  height: 100%;
+}
+
+.personal-container {
+  grid-area: personal;
+  height: 100%;
+}

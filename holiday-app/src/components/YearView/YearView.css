@@ -1,0 +1,22 @@
+.year-view {
+  display: flex; 
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.year-view-month {
+  width: 20%; 
+  margin: 10px;
+}
+
+.year-view-month-text {
+  align-items: center;
+}
+
+.year-view-month-content {
+  list-style-type: none; 
+  padding: 0
+}
+

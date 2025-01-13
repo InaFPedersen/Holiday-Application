@@ -1,0 +1,13 @@
+.navigational-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.divider {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: 20px;
+}

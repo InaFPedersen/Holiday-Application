@@ -3,3 +3,62 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container-header {
+  position: fixed;
+  margin-top: -100px;
+}
+
+.container-body {
+  margin: 20px;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.page-light-mode {
+  background-color: white;
+  color: black;
+  height: 100vh;
+}
+
+.page-dark-mode {
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+.component-light-mode {
+  background-color: #d4d4d4;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.component-dark-mode {
+  background-color: #454545;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.flex-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.back-btn-img-light {
+  max-width: 100px;
+  max-height: 100px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.back-btn-img-dark {
+  max-width: 100px;
+  max-height: 100px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  cursor: pointer;
+}

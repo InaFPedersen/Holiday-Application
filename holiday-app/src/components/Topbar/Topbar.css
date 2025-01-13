@@ -1,19 +1,24 @@
-.container {
-  position: fixed;
-}
-
 .topbar {
   width: 100vw;
-  background-color: lightgray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
+  
 }
 
-img {
+.topbar-container-light {
+  border-bottom: 1px solid #000;
+}
+
+.topbar-container-dark {
+  border-bottom: 1px solid #fff;
+}
+
+.topbar-img {
   max-width: 55px;
   max-height: 55px;
+  cursor: pointer;
 }
 
 .left-container {
@@ -48,12 +53,10 @@ img {
 
 .flag-dropdown {
   position: absolute;
-  left: 1250px;
-  background-color: lightgray;
-  height: 200px;
-  padding: 2px;
-  width: 80px;
-  border: 1px solid black;
+  right: 90px;
+  top: 75px;
+  height: fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,12 +66,11 @@ img {
 
 .profile-dropdown {
   position: absolute;
-  left: 1150px;
-  background-color: lightgray;
-  padding: 2px;
-  height: 100px;
-  width: 250px;
-  border: 1px solid black;
+  right: 25px;
+  top: 75px;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
