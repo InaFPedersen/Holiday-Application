@@ -1,14 +1,14 @@
 <svg width="88" height="81" viewBox="0 0 88 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="44" cy="40.5" rx="44" ry="40.5" transform="matrix(1 0 0 -1 0 81)" fill="white"/>
+<path d="M87.5 40.5C87.5 18.4468 68.0642 0.5 44 0.5C19.9358 0.5 0.5 18.4468 0.5 40.5C0.5 62.5532 19.9358 80.5 44 80.5C68.0642 80.5 87.5 62.5532 87.5 40.5Z" fill="white" stroke="black"/>
 <rect x="10.5" y="15.5" width="68" height="48" fill="#100884" stroke="black"/>
 <rect x="11" y="58" width="6" height="5" fill="white"/>
 <rect x="72" y="58" width="6" height="5" fill="white"/>
-<rect x="74.0333" y="54.8689" width="4.93746" height="1.76429" transform="rotate(31.83 74.0333 54.8689)" fill="white"/>
+<rect x="74.0333" y="54.869" width="4.93746" height="1.76429" transform="rotate(31.83 74.0333 54.869)" fill="white"/>
 <rect x="73" y="16" width="5" height="7" fill="white"/>
 <rect x="11" y="16" width="4" height="7" fill="white"/>
 <rect x="14.6272" y="15.78" width="5.46671" height="2.46787" transform="rotate(32.4479 14.6272 15.78)" fill="white"/>
 <rect x="11" y="57.6446" width="5" height="5.29032" transform="rotate(-7.40672 11 57.6446)" fill="white"/>
-<rect x="10.9002" y="57.3412" width="5" height="6.19856" transform="rotate(-30.1704 10.9002 57.3412)" fill="white"/>
+<rect x="10.9001" y="57.3412" width="5" height="6.19856" transform="rotate(-30.1704 10.9001 57.3412)" fill="white"/>
 <rect x="11.0552" y="59" width="2.09343" height="3.42552" transform="rotate(0.796171 11.0552 59)" fill="#BD0909"/>
 <line x1="43" y1="63" x2="43" y2="16" stroke="white" stroke-width="10"/>
 <line x1="10.953" y1="41.6296" x2="77.9575" y2="41.0002" stroke="white" stroke-width="10"/>

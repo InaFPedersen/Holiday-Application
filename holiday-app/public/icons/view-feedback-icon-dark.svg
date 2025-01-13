@@ -1,5 +1,5 @@
 <svg width="88" height="81" viewBox="0 0 88 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="44" cy="40.5" rx="44" ry="40.5" transform="matrix(1 0 0 -1 0 81)" fill="black"/>
+<path d="M87.5 40.5C87.5 18.4468 68.0642 0.5 44 0.5C19.9358 0.5 0.5 18.4468 0.5 40.5C0.5 62.5532 19.9358 80.5 44 80.5C68.0642 80.5 87.5 62.5532 87.5 40.5Z" fill="black" stroke="white"/>
 <rect x="16" y="11" width="57" height="59" rx="9" fill="black" stroke="white" stroke-width="2"/>
 <ellipse cx="32" cy="51.5" rx="11" ry="7.5" fill="white"/>
 <ellipse cx="43" cy="43.5" rx="11" ry="7.5" fill="white"/>
