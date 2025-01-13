@@ -2,8 +2,10 @@ import Topbar from '../../components/Topbar/Topbar'
 import './Dashboard.css'
 import Navigation from '../../components/Navigation/Navigation';
 import Calendar from '../../components/Calendar/Calendar';
+import CalendarEvent from '../../interfaces/CalendarEvents';
 
 type Props = {
+  events: CalendarEvent[]
   lightModeActive: boolean, 
   setLightModeActive: any,
   isAdmin: boolean,
@@ -16,7 +18,7 @@ type Props = {
   setActiveLanguage: any
 }
 
-const Dashboard = ({lightModeActive, isAdmin, isLeader, user, setUser, setLightModeActive, userLoggedIn, setUserLoggedIn, activeLanguage, setActiveLanguage} : Props) => {
+const Dashboard = ({events, lightModeActive, isAdmin, isLeader, user, setUser, setLightModeActive, userLoggedIn, setUserLoggedIn, activeLanguage, setActiveLanguage} : Props) => {
   
   return (
     <div className={lightModeActive ? 'page-light-mode' : 'page-dark-mode'}>
@@ -32,7 +34,7 @@ const Dashboard = ({lightModeActive, isAdmin, isLeader, user, setUser, setLightM
           </div>
 
           <div className='personal-container'>
-            <Calendar lightModeActive={lightModeActive} />
+            <Calendar events={events} lightModeActive={lightModeActive} activelanguage={activeLanguage}/>
           </div>
         </div>
       </div>

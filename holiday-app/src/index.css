@@ -52,6 +52,7 @@
   max-height: 100px;
   border: 1px solid #000;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .back-btn-img-dark {
@@ -59,4 +60,5 @@
   max-height: 100px;
   border: 1px solid #fff;
   border-radius: 15px;
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, data } from "react-router-dom";
 import { useState } from 'react'
 import './index.css'
 import Dashboard from "./pages/Dashboard/Dashboard.tsx";
@@ -22,14 +22,29 @@ export default function Main () {
   const [user, setUser] = useState('');
   const [lightModeActive, setLightModeActive] = useState(true);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [activeLanguage, setActiveLanguage] = useState('norwegian');
+  const [activeLanguage, setActiveLanguage] = useState<'norwegian' | 'british' | 'american' | 'english'>('norwegian'); 
   const [isAdmin, setIsAdmin] = useState(true);
   const [isLeader, setIsLeader] = useState(true);
+  const events = [
+    { id: 1, title: 'New Years’s Day', date: new Date(2025, 0 , 1) },
+    { id: 2, title: 'Valentine’s Day', date: new Date(2025, 1, 14) },
+    { id: 1, title: 'Palm Sunday', date: new Date(2025, 3 , 13) },
+    { id: 2, title: 'Holy Thursday', date: new Date(2025, 3, 17) },
+    { id: 2, title: 'Good Friday', date: new Date(2025, 3, 18) },
+    { id: 2, title: 'Easter Day', date: new Date(2025, 3, 20) },
+    { id: 2, title: 'Second Easter Day', date: new Date(2025, 3, 21) },
+    { id: 2, title: 'Arbeidernes dag', date: new Date(2025, 4, 1) },
+    { id: 2, title: 'Grunnlovsdag', date: new Date(2025, 4, 17) },
+    { id: 1, title: 'Christmas Eve', date: new Date(2025, 11 , 24) },
+    { id: 2, title: 'Christmas Day', date: new Date(2025, 11, 25) },
+    { id: 2, title: 'Second Day of Christmas', date: new Date(2025, 11, 26) },
+    { id: 2, title: 'New Years’s Eve', date: new Date(2025, 11, 31) },
+  ]
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard lightModeActive={lightModeActive}  isAdmin={isAdmin} isLeader={isLeader} user={user} setUser={setUser} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage}/>} />
+        <Route path="/" element={<Dashboard events={events} lightModeActive={lightModeActive}  isAdmin={isAdmin} isLeader={isLeader} user={user} setUser={setUser} setLightModeActive={setLightModeActive} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage}/>} />
 
         <Route path='/add-event' element={<AddEvent lightModeActive={lightModeActive} setLightModeActive={setLightModeActive} user={user} setUser={setUser} userLoggedIn={userLoggedIn} setUserLoggedIn={setUserLoggedIn} activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />} />
 

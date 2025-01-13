@@ -2,6 +2,8 @@ import { useNavigate } from "react-router";
 import Divider from "../../components/Divider";
 import Topbar from "../../components/Topbar/Topbar";
 
+// Should I use React Date Picker ?? see https://www.npmjs.com/package/react-datepicker
+
 type Props = {
   lightModeActive: boolean, 
   setLightModeActive: any,
